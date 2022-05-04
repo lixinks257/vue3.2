@@ -1,20 +1,59 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
+import store from '@/store'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/login/index.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/',
+    name: 'Layout',
+    component: () => import('../layout/index.vue'),
+    redirect: '/users',
+    children: [
+      {
+        path: 'users',
+        name: 'users',
+        component: () => import('@/views/users/index.vue')
+      },
+      {
+        path: 'categories',
+        name: 'categories',
+        component: () => import('@/views/categories/index.vue')
+      },
+      {
+        path: 'goods',
+        name: 'goods',
+        component: () => import('@/views/goods/index.vue')
+      },
+      {
+        path: 'orders',
+        name: 'orders',
+        component: () => import('@/views/orders/index.vue')
+      },
+      {
+        path: 'params',
+        name: 'params',
+        component: () => import('@/views/params/index.vue')
+      },
+      {
+        path: 'reports',
+        name: 'reports',
+        component: () => import('@/views/reports/index.vue')
+      },
+      {
+        path: 'rights',
+        name: 'rights',
+        component: () => import('@/views/rights/index.vue')
+      },
+      {
+        path: 'roles',
+        name: 'roles',
+        component: () => import('@/views/roles/index.vue')
+      }
+    ]
   }
 ]
 
@@ -23,4 +62,23 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  // 白名单配置
+  const whiteList = ['/login']
+  if (store.getters.token) {
+    if (to.path === '/login') {
+      next('/')
+    } else {
+      next()
+    }
+  } else {
+    if (whiteList.includes(to.path)) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
+
+  next()
+})
 export default router
