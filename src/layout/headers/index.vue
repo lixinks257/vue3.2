@@ -1,22 +1,21 @@
 <template>
   <div class="navbar">
-    <!-- <Hamburger />
+    <Hamburger />
     <Breadcrumb />
     <div class="navbar-right">
-      <Driver class="navbar-item" />
-      <screen-full class="navbar-item" />
+      <!-- <Driver class="navbar-item" /> -->
+      <!-- <screen-full class="navbar-item" /> -->
       <Lang class="navbar-item" />
       <Avatar class="navbar-item" />
-    </div> -->
-    <Hamburger />
+    </div>
   </div>
 </template>
 
 <script setup>
 import Hamburger from './components/hamburger.vue'
-// import Breadcrumb from './components/breadcrumb.vue'
-// import Avatar from './components/avatar.vue'
-// import Lang from './components/lang.vue'
+import Breadcrumb from './components/breadcrumb.vue'
+import Avatar from './components/avatar.vue'
+import Lang from './components/lang.vue'
 // import ScreenFull from './components/screenFull.vue'
 // import Driver from './components/driver'
 </script>
@@ -38,12 +37,12 @@ import Hamburger from './components/hamburger.vue'
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    ::v-deep .navbar-item {
-      display: inline-block;
+    ::v-deep() .navbar-item {
+      // display: inline-block;
       margin-left: 18px;
       font-size: 22px;
       color: #5a5e66;
-      box-sizing: border-box;
+      // box-sizing: border-box;
       cursor: pointer;
     }
   }

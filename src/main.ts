@@ -9,6 +9,7 @@ import 'element-plus/dist/index.css'
 import SvgIcon from '@/icons'
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import i18n from './i18n'
 
 const app = createApp(App)
 
@@ -25,5 +26,5 @@ for (const iconName in ElementPlusIconsVue) {
 //   )
 // })
 SvgIcon(app)
-app.use(store).use(router).use(ElementPlus).mount('#app')
+app.use(store).use(router).use(ElementPlus).use(i18n).mount('#app')
 // createApp(App).use(store).use(router).mount('#app')

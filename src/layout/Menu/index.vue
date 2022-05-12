@@ -12,7 +12,7 @@
     <el-sub-menu :index="item.id" v-for="(item, idx) in menusList" :key="idx">
       <template #title>
         <el-icon><component :is="iconList[idx]"></component></el-icon>
-        <span>{{ item.authName }}</span>
+        <span>{{ $t(`menus.${item.path}`) }}</span>
       </template>
       <el-menu-item
         :index="'/' + li.path"
@@ -22,7 +22,7 @@
       >
         <template #title>
           <el-icon><component :is="icon"></component></el-icon>
-          <span>{{ li.authName }}</span>
+          <span>{{ $t(`menus.${li.path}`) }}</span>
         </template>
       </el-menu-item>
     </el-sub-menu>

@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/',
-    name: 'Layout',
+    name: '/',
     component: () => import('../layout/index.vue'),
     redirect: '/users',
     children: [
@@ -62,6 +62,7 @@ const router = createRouter({
   routes
 })
 
+// 路由前置守卫
 router.beforeEach((to, from, next) => {
   // 白名单配置
   const whiteList = ['/login']
