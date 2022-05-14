@@ -89,6 +89,7 @@ module.exports = {
       }
     }
   },
+  // 全局引入sass
   css: {
     loaderOptions: {
       sass: {

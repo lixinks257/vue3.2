@@ -1,19 +1,16 @@
 <template>
   <el-breadcrumb separator="/">
-    <el-breadcrumb-item
-      v-for="(item, index) in breadcrumbList.list"
-      :key="index"
-    >
+    <el-breadcrumb-item v-for="(item, index) in breadcrumbList.list" :key="index">
       <!-- <span class="no-redirect" v-if="index === breadcrumbList.length - 1">{{
         $t(`menus.${item.name}`)
       }}</span>
       <span class="redirect" v-else @click="handleRedirect(item.path)">{{
         $t(`menus.${item.name}`)
       }}</span> -->
-      <span class="no-redirect" v-if="index === breadcrumbList.list.length - 1">
+      <span v-if="index === breadcrumbList.list.length - 1" class="no-redirect">
         {{ $t(`menus.${item.name}`) }}
       </span>
-      <span class="redirect" v-else @click="handleRedirect(item.path)">
+      <span v-elseclass="redirect" @click="handleRedirect(item.path)">
         {{ $t(`menus.${item.name}`) }}
       </span>
     </el-breadcrumb-item>

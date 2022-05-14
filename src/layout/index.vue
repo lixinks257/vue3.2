@@ -3,10 +3,7 @@
     <el-aside class="sidebar-container" :width="asideWidth">
       <Menu />
     </el-aside>
-    <el-container
-      class="container"
-      :class="{ hidderContainer: !$store.getters.siderType }"
-    >
+    <el-container class="container" :class="{ hidderContainer: !$store.getters.siderType }">
       <el-header><Headers /></el-header>
       <el-main>
         <router-view />
@@ -24,9 +21,7 @@ import { useStore } from 'vuex'
 const store = useStore()
 // const asideWidth = ref(variables.sideBarWidth)
 const asideWidth = computed(() => {
-  return store.getters.siderType
-    ? variables.sideBarWidth
-    : variables.hideSideBarWidth
+  return store.getters.siderType ? variables.sideBarWidth : variables.hideSideBarWidth
 })
 </script>
 

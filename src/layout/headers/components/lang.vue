@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown @command="handleCommand" id="lang">
+  <el-dropdown id="lang" @command="handleCommand">
     <svg-icon icon="language" class="svg-container"></svg-icon>
     <template #dropdown>
       <el-dropdown-menu>

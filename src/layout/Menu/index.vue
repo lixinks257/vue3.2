@@ -9,17 +9,12 @@
     router
     unique-opened
   >
-    <el-sub-menu :index="item.id" v-for="(item, idx) in menusList" :key="idx">
+    <el-sub-menu v-for="(item, idx) in menusList" :key="idx" :index="item.id">
       <template #title>
         <el-icon><component :is="iconList[idx]"></component></el-icon>
         <span>{{ $t(`menus.${item.path}`) }}</span>
       </template>
-      <el-menu-item
-        :index="'/' + li.path"
-        v-for="(li, index) in item.children"
-        :key="index"
-        @click="savePath(li.path)"
-      >
+      <el-menu-item v-for="(li, index) in item.children" :key="index" :index="'/' + li.path" @click="savePath(li.path)">
         <template #title>
           <el-icon><component :is="icon"></component></el-icon>
           <span>{{ $t(`menus.${li.path}`) }}</span>
