@@ -40,6 +40,7 @@ export default {
     prevBtnText: 'prev',
     guideBtn: 'guidebtn',
     hamburgerBtn: 'hamburgerBtn',
-    fullScreen: 'fullScreen'
+    fullScreen: 'fullScreen',
+    lang: 'langeuage'
   }
 }

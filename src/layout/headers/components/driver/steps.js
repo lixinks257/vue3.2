@@ -22,5 +22,13 @@ export const steps = (i18n) => [
       description: 'Body of the popover',
       position: 'left'
     }
+  },
+  {
+    element: '#lang',
+    popover: {
+      title: i18n('driver.lang'),
+      description: 'Body of the popover',
+      position: 'left'
+    }
   }
 ]

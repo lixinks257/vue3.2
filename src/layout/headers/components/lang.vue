@@ -1,14 +1,10 @@
 <template>
-  <el-dropdown @command="handleCommand">
+  <el-dropdown @command="handleCommand" id="lang">
     <svg-icon icon="language" class="svg-container"></svg-icon>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item command="zh" :disabled="currentLanguage === 'zh'">
-          中文
-        </el-dropdown-item>
-        <el-dropdown-item command="en" :disabled="currentLanguage === 'en'">
-          English
-        </el-dropdown-item>
+        <el-dropdown-item command="zh" :disabled="currentLanguage === 'zh'">中文</el-dropdown-item>
+        <el-dropdown-item command="en" :disabled="currentLanguage === 'en'">English</el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>

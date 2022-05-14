@@ -11,12 +11,14 @@ import { onMounted } from 'vue'
 import { steps } from './steps'
 import { watchLang } from '@/i18n/watchlang'
 import i18n from '@/i18n'
+// 引入I18N
 const t = i18n.global.t
 let driver
 onMounted(() => {
   initDriver()
 })
 
+// 初始化driver
 const initDriver = () => {
   driver = new Driver({
     animate: false, // Whether to animate or not
