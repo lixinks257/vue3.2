@@ -13,6 +13,7 @@
 10.eslint+prettier(语法检查和校验)
 11.svg-icon
 12.git+commitize+cz-customizable git代码 提交规范
+13.css3+flex布局
 
 ```
 
